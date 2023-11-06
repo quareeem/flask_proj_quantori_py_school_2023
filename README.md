@@ -36,4 +36,4 @@ http://127.0.0.1:8000/admin
 ```
 Make sure that you login on the main page not in the admin panel.
 
-3. After that you are free to create new Posts, and explore the app.
+After that you are free to create new Posts, and explore the app.
