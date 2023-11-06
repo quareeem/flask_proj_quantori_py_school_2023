@@ -14,12 +14,26 @@ In order to run this container you'll need docker installed.
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
 
-### Installing
+### Installation and Usage
 
 To get the application running, follow these steps:
 
-1. Clone the repository to your local machine:
+After cloning repository run the following command:
 
 ```shell
-git clone https://yourrepository.com/yourapp.git
-cd yourapp
+docker-compose up --build
+```
+
+If container launched successfully, then you can proceed to the main page and start using the app. Please register and login there:
+
+```shell
+http://127.0.0.1:8000
+```
+
+Admin panel is here. You may need to create new Groups here:
+```shell
+http://127.0.0.1:8000/admin
+```
+Make sure that you login on the main page not in the admin panel.
+
+3. After that you are free to create new Posts, and explore the app.
