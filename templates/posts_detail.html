@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content }}</p>
+            <p>Posted on: {{ post.created_date.strftime('%Y-%m-%d %H:%M') }}</p>
+            <p>Author: {{ post.author.username }}</p>
+
+            <!-- Display favorite button if the post is not already a favorite -->
+            {% if not is_favorite %}
+            <form action="{{ url_for('favorite_post', post_id=post.id) }}" method="post">
+                <button type="submit" class="btn btn-primary">Mark as Favorite</button>
+            </form>
+            {% endif %}
+
+            <!-- Only display update and delete options to the author -->
+            {% if is_author %}
+            <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn btn-secondary">Edit</a>
+            <form action="{{ url_for('delete_post', post_id=post.id) }}" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
